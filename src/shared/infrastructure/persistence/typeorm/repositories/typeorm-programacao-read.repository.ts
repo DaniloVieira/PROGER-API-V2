@@ -20,7 +20,7 @@ import { Vazao } from '@modules/calculation/domain/value-objects/vazao';
 import { Volume } from '@modules/calculation/domain/value-objects/volume';
 import { NivelReservatorio } from '@modules/calculation/domain/value-objects/nivel-reservatorio';
 import { DomainException } from '@shared/domain';
-import { ValidadorPainelService } from '@modules/restriction/domain/services/validador-painel.service';
+import { ValidadorPainelService, type DadosPainelPeriodo } from '@modules/restriction/domain/services/validador-painel.service';
 import { toDateString, startOfDay, endOfDay, startOfDayWithBuffer, endOfDayWithBuffer } from '../date-utils';
 
 @Injectable()
@@ -394,9 +394,21 @@ export class TypeOrmProgramacaoReadRepository implements IProgramacaoReadReposit
       ? this.gerarValoresEixo(vzMax.vlParametro, vzMin.vlParametro)
       : this.gerarValoresEixo(Math.max(...geracaoVals), Math.min(...geracaoVals));
 
+    // ─── Validação de restrições (usa valores do banco, igual ao legado) ───────
+    const dadosValidacao: DadosPainelPeriodo[] = refSeries.map((r, i) => ({
+      periodo: i,
+      geracaoMW: Number(r.geracao_mw) || 0,
+      vazaoVertida: Number(r.vazao_vertida) || 0,
+      vazaoIncremental: Number(r.vazao_incremental) || 0,
+      nivelReservatorio: Number(r.nivel_reservatorio) || 0,
+      vazaoTurbinada: Number(r.vazao_turbinada) || 0,
+      vazaoDefluente: Number(r.vazao_defluente) || 0,
+      vazaoAfluente: Number(r.vazao_afluente) || 0,
+    }));
+
     const validadorPainel = new ValidadorPainelService();
     const alertasRestricoesPainel = validadorPainel.validar(
-      dados,
+      dadosValidacao,
       restricoes,
     );
 

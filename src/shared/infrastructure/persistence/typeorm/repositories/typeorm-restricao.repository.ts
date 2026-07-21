@@ -54,9 +54,15 @@ export class TypeOrmRestricaoRepository implements IRestricaoRepository {
 			dsVarRef: String(r.tr_dsVarRef),
 			cdTipoAtributo: Number(r.tr_cdTipoAtributo),
 			nrPerRestricao: Number(r.ru_nrPerRestricao),
-			vlRestricao: r.ru_vlRestricao ? Number(r.ru_vlRestricao) : undefined,
-			vlFxIniRest: r.ru_vlFxIniRest ? Number(r.ru_vlFxIniRest) : undefined,
-			vlFxFimRest: r.ru_vlFxFimRest ? Number(r.ru_vlFxFimRest) : undefined,
+			vlRestricao: r.ru_vlRestricao !== undefined && r.ru_vlRestricao !== null
+				? Number(r.ru_vlRestricao)
+				: undefined,
+			vlFxIniRest: r.ru_vlFxIniRest !== undefined && r.ru_vlFxIniRest !== null
+				? Number(r.ru_vlFxIniRest)
+				: undefined,
+			vlFxFimRest: r.ru_vlFxFimRest !== undefined && r.ru_vlFxFimRest !== null
+				? Number(r.ru_vlFxFimRest)
+				: undefined,
 			dtIniRestricao: r.ru_dtIniRestricao
 				? new Date(r.ru_dtIniRestricao)
 				: undefined,

@@ -98,6 +98,10 @@ export class DadosPainelDto {
 	@ApiProperty({ type: AlertasRestricoesPainelDto, required: false })
 	alertasRestricoesPainel?: AlertasRestricoesPainelDto;
 
-	@ApiProperty({ example: true, required: false, description: "true se geracao ONS diverge da geracao programada" })
+	@ApiProperty({
+		example: true,
+		required: false,
+		description: "true se geracao ONS diverge da geracao programada",
+	})
 	onsPainel?: boolean;
 }
