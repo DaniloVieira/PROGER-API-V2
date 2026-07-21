@@ -19,55 +19,47 @@ export class TypeOrmRestricaoRepository implements IRestricaoRepository {
 		cdUsina: string,
 		_periodo: number,
 	): Promise<RestricaoAtiva[]> {
-		const resultado = await this.restricaoRepo
-			.createQueryBuilder("ru")
-			.innerJoin(
-				PrgTiposRestricaoEntity,
-				"tr",
-				"ru.cdTpRestricao = tr.cdTpRestricao",
-			)
-			.select([
-				"ru.cdTpRestricao",
-				"tr.dsRestricao",
-				"tr.dsVarRef",
-				"tr.cdTipoAtributo",
-				"ru.nrPerRestricao",
-				"ru.vlRestricao",
-				"ru.vlFxIniRest",
-				"ru.vlFxFimRest",
-				"ru.dtIniRestricao",
-				"ru.dtFimRestricao",
-			])
-			.where("ru.cdUsina = :cdUsina", { cdUsina })
-			.andWhere("ru.flStatus = 1")
-			.andWhere(
-				"(ru.dtIniRestricao IS NULL OR ru.dtIniRestricao <= CURRENT_DATE)",
-			)
-			.andWhere(
-				"(ru.dtFimRestricao IS NULL OR ru.dtFimRestricao >= CURRENT_DATE)",
-			)
-			.getRawMany();
+		const sql = `
+			SELECT RU.CD_TP_RESTRICAO AS "cd_tp_restricao",
+				   TR.DS_RESTRICAO AS "ds_restricao",
+				   TR.DS_VAR_REF AS "ds_var_ref",
+				   TR.CD_TIPO_ATRIBUTO AS "cd_tipo_atributo",
+				   RU.NR_PER_RESTRICAO AS "nr_per_restricao",
+				   RU.VL_RESTRICAO AS "vl_restricao",
+				   RU.VL_FX_INI_REST AS "vl_fx_ini_rest",
+				   RU.VL_FX_FIM_REST AS "vl_fx_fim_rest",
+				   RU.DT_INI_RESTRICAO AS "dt_ini_restricao",
+				   RU.DT_FIM_RESTRICAO AS "dt_fim_restricao"
+			FROM PROGER.PRG_RESTRICAO_USINA RU
+			INNER JOIN PROGER.PRG_TIPOS_RESTRICAO TR ON RU.CD_TP_RESTRICAO = TR.CD_TP_RESTRICAO
+			WHERE RU.CD_USINA = :1
+			  AND RU.FL_STATUS = 1
+			  AND (RU.DT_INI_RESTRICAO IS NULL OR RU.DT_INI_RESTRICAO <= CURRENT_DATE)
+			  AND (RU.DT_FIM_RESTRICAO IS NULL OR RU.DT_FIM_RESTRICAO >= CURRENT_DATE)
+		`;
 
-		return resultado.map((r) => ({
-			cdTpRestricao: Number(r.ru_cdTpRestricao),
-			dsRestricao: String(r.tr_dsRestricao),
-			dsVarRef: String(r.tr_dsVarRef),
-			cdTipoAtributo: Number(r.tr_cdTipoAtributo),
-			nrPerRestricao: Number(r.ru_nrPerRestricao),
-			vlRestricao: r.ru_vlRestricao !== undefined && r.ru_vlRestricao !== null
-				? Number(r.ru_vlRestricao)
+		const resultado = await this.restricaoRepo.query(sql, [cdUsina]);
+
+		return resultado.map((r: any) => ({
+			cdTpRestricao: Number(r.cd_tp_restricao),
+			dsRestricao: String(r.ds_restricao),
+			dsVarRef: String(r.ds_var_ref),
+			cdTipoAtributo: Number(r.cd_tipo_atributo),
+			nrPerRestricao: Number(r.nr_per_restricao),
+			vlRestricao: r.vl_restricao !== undefined && r.vl_restricao !== null
+				? Number(r.vl_restricao)
 				: undefined,
-			vlFxIniRest: r.ru_vlFxIniRest !== undefined && r.ru_vlFxIniRest !== null
-				? Number(r.ru_vlFxIniRest)
+			vlFxIniRest: r.vl_fx_ini_rest !== undefined && r.vl_fx_ini_rest !== null
+				? Number(r.vl_fx_ini_rest)
 				: undefined,
-			vlFxFimRest: r.ru_vlFxFimRest !== undefined && r.ru_vlFxFimRest !== null
-				? Number(r.ru_vlFxFimRest)
+			vlFxFimRest: r.vl_fx_fim_rest !== undefined && r.vl_fx_fim_rest !== null
+				? Number(r.vl_fx_fim_rest)
 				: undefined,
-			dtIniRestricao: r.ru_dtIniRestricao
-				? new Date(r.ru_dtIniRestricao)
+			dtIniRestricao: r.dt_ini_restricao
+				? new Date(r.dt_ini_restricao)
 				: undefined,
-			dtFimRestricao: r.ru_dtFimRestricao
-				? new Date(r.ru_dtFimRestricao)
+			dtFimRestricao: r.dt_fim_restricao
+				? new Date(r.dt_fim_restricao)
 				: undefined,
 		}));
 	}
