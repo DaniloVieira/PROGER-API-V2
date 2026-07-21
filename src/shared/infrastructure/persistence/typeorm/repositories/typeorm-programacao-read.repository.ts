@@ -158,6 +158,7 @@ export class TypeOrmProgramacaoReadRepository implements IProgramacaoReadReposit
              NR_VAZAO_DEFLUENTE AS "vazao_defluente",
              NR_VAZAO_AFLUENTE AS "vazao_afluente",
              NR_DISPONIVEL AS "disponivel",
+             NR_GERACAO_ONS AS "geracao_mw_ons",
              NR_VAZAO_VAO_LIVRE AS "vazao_vao_livre"
       FROM PRG_DADOS_PROGRAMACAO
       WHERE CD_USINA IN (${inClause})
@@ -248,6 +249,7 @@ export class TypeOrmProgramacaoReadRepository implements IProgramacaoReadReposit
       const vazaoIncremental = Number(r.vazao_incremental) || 0;
       const vazaoVaoLivre = Number(r.vazao_vao_livre) || 0;
       const disponivel = Number(r.disponivel) || 0;
+      const geracaoMWOns = isHistoriador ? undefined : (Number(r.geracao_mw_ons) || 0);
 
       let nivelReservatorio: number;
       let volumeTotal: number;
@@ -343,6 +345,7 @@ export class TypeOrmProgramacaoReadRepository implements IProgramacaoReadReposit
         periodo: i,
         dtProgramacao: toDateString(new Date(r.dt_programacao)),
         geracaoMW,
+        geracaoMWOns,
         vazaoVertida,
         vazaoIncremental,
         nivelReservatorio,
@@ -397,6 +400,10 @@ export class TypeOrmProgramacaoReadRepository implements IProgramacaoReadReposit
       restricoes,
     );
 
+    const onsPainel = dados.slice(48).some(
+      (d) => d.geracaoMWOns !== undefined && d.geracaoMWOns !== d.geracaoMW,
+    );
+
     return {
       cdUsina: filtros.cdUsina,
       dtProgramacao: filtros.dtProgramacao,
@@ -405,6 +412,7 @@ export class TypeOrmProgramacaoReadRepository implements IProgramacaoReadReposit
       eixoNivelRes,
       eixoDispGeracao,
       alertasRestricoesPainel,
+      onsPainel,
     };
   }
 

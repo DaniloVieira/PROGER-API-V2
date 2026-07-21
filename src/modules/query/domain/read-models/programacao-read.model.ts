@@ -51,6 +51,7 @@ export interface DadosPainelItem {
 	periodo: number;
 	dtProgramacao: string;
 	geracaoMW: number;
+	geracaoMWOns?: number;
 	vazaoVertida: number;
 	vazaoIncremental: number;
 	nivelReservatorio: number;
@@ -83,4 +84,6 @@ export interface DadosPainel {
 	eixoNivelRes: number[];
 	eixoDispGeracao: number[];
 	alertasRestricoesPainel?: AlertasRestricoesPainel;
+	// true se geracao ONS diverge da geracao programada em qualquer periodo do dia atual
+	onsPainel?: boolean;
 }

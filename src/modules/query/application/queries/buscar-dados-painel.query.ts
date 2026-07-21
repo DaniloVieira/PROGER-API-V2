@@ -34,6 +34,7 @@ export class BuscarDadosPainelHandler {
         periodo: d.periodo,
         dtProgramacao: d.dtProgramacao,
         geracaoMW: d.geracaoMW,
+        geracaoMWOns: d.geracaoMWOns,
         vazaoVertida: d.vazaoVertida,
         vazaoIncremental: d.vazaoIncremental,
         nivelReservatorio: d.nivelReservatorio,
@@ -56,6 +57,7 @@ export class BuscarDadosPainelHandler {
             nivel: dados.alertasRestricoesPainel.nivel,
           }
         : undefined,
+      onsPainel: dados.onsPainel,
     };
   }
 }

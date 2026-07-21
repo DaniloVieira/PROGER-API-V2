@@ -17,6 +17,9 @@ class DadosPainelItemDto {
 	@ApiProperty({ example: 120.5 })
 	geracaoMW: number;
 
+	@ApiProperty({ example: 120.0, required: false })
+	geracaoMWOns?: number;
+
 	@ApiProperty({ example: 10.0 })
 	vazaoVertida: number;
 
@@ -94,4 +97,7 @@ export class DadosPainelDto {
 
 	@ApiProperty({ type: AlertasRestricoesPainelDto, required: false })
 	alertasRestricoesPainel?: AlertasRestricoesPainelDto;
+
+	@ApiProperty({ example: true, required: false, description: "true se geracao ONS diverge da geracao programada" })
+	onsPainel?: boolean;
 }
