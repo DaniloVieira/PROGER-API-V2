@@ -54,6 +54,25 @@ class DadosPainelItemDto {
 	dadosVerificados: boolean;
 }
 
+class AlertaRestricaoItemDto {
+	@ApiProperty({ example: 22 })
+	cdTpRestricao: number;
+
+	@ApiProperty({ example: "Geração Mínima (MW)" })
+	descricao: string;
+}
+
+class AlertasRestricoesPainelDto {
+	@ApiProperty({ type: [AlertaRestricaoItemDto] })
+	geracao: AlertaRestricaoItemDto[];
+
+	@ApiProperty({ type: [AlertaRestricaoItemDto] })
+	hidrico: AlertaRestricaoItemDto[];
+
+	@ApiProperty({ type: [AlertaRestricaoItemDto] })
+	nivel: AlertaRestricaoItemDto[];
+}
+
 export class DadosPainelDto {
 	@ApiProperty({ example: "UHJA" })
 	cdUsina: string;
@@ -72,4 +91,7 @@ export class DadosPainelDto {
 
 	@ApiProperty({ type: [Number], example: [0, 25, 50, 75, 100] })
 	eixoDispGeracao: number[];
+
+	@ApiProperty({ type: AlertasRestricoesPainelDto, required: false })
+	alertasRestricoesPainel?: AlertasRestricoesPainelDto;
 }

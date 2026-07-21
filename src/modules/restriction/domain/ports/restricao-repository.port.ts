@@ -7,6 +7,8 @@ export interface RestricaoAtiva {
 	vlFxFimRest?: number;
 	dtIniRestricao?: Date;
 	dtFimRestricao?: Date;
+	cdTipoAtributo: number;
+	nrPerRestricao: number;
 }
 
 export interface IRestricaoRepository {

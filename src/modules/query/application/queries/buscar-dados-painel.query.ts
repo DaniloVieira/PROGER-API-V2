@@ -49,6 +49,13 @@ export class BuscarDadosPainelHandler {
       eixoVazaoGeracao: dados.eixoVazaoGeracao,
       eixoNivelRes: dados.eixoNivelRes,
       eixoDispGeracao: dados.eixoDispGeracao,
+      alertasRestricoesPainel: dados.alertasRestricoesPainel
+        ? {
+            geracao: dados.alertasRestricoesPainel.geracao,
+            hidrico: dados.alertasRestricoesPainel.hidrico,
+            nivel: dados.alertasRestricoesPainel.nivel,
+          }
+        : undefined,
     };
   }
 }

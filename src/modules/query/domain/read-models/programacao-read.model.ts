@@ -64,6 +64,17 @@ export interface DadosPainelItem {
 	nivelMinimoReservatorio?: number;
 }
 
+export interface AlertaRestricaoItem {
+	cdTpRestricao: number;
+	descricao: string;
+}
+
+export interface AlertasRestricoesPainel {
+	geracao: AlertaRestricaoItem[];
+	hidrico: AlertaRestricaoItem[];
+	nivel: AlertaRestricaoItem[];
+}
+
 export interface DadosPainel {
 	cdUsina: string;
 	dtProgramacao: string;
@@ -71,4 +82,5 @@ export interface DadosPainel {
 	eixoVazaoGeracao: number[];
 	eixoNivelRes: number[];
 	eixoDispGeracao: number[];
+	alertasRestricoesPainel?: AlertasRestricoesPainel;
 }

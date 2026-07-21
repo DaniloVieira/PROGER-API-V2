@@ -20,6 +20,7 @@ import { Vazao } from '@modules/calculation/domain/value-objects/vazao';
 import { Volume } from '@modules/calculation/domain/value-objects/volume';
 import { NivelReservatorio } from '@modules/calculation/domain/value-objects/nivel-reservatorio';
 import { DomainException } from '@shared/domain';
+import { ValidadorPainelService } from '@modules/restriction/domain/services/validador-painel.service';
 import { toDateString, startOfDay, endOfDay, startOfDayWithBuffer, endOfDayWithBuffer } from '../date-utils';
 
 @Injectable()
@@ -390,6 +391,12 @@ export class TypeOrmProgramacaoReadRepository implements IProgramacaoReadReposit
       ? this.gerarValoresEixo(vzMax.vlParametro, vzMin.vlParametro)
       : this.gerarValoresEixo(Math.max(...geracaoVals), Math.min(...geracaoVals));
 
+    const validadorPainel = new ValidadorPainelService();
+    const alertasRestricoesPainel = validadorPainel.validar(
+      dados,
+      restricoes,
+    );
+
     return {
       cdUsina: filtros.cdUsina,
       dtProgramacao: filtros.dtProgramacao,
@@ -397,6 +404,7 @@ export class TypeOrmProgramacaoReadRepository implements IProgramacaoReadReposit
       eixoVazaoGeracao,
       eixoNivelRes,
       eixoDispGeracao,
+      alertasRestricoesPainel,
     };
   }
 

@@ -13,13 +13,11 @@ export class TypeOrmRestricaoRepository implements IRestricaoRepository {
 	constructor(
 		@InjectRepository(PrgRestricaoUsinaEntity)
 		private readonly restricaoRepo: Repository<PrgRestricaoUsinaEntity>,
-		@InjectRepository(PrgTiposRestricaoEntity)
-		private readonly tiposRepo: Repository<PrgTiposRestricaoEntity>,
 	) {}
 
 	async buscarRestricoesAtivas(
 		cdUsina: string,
-		periodo: number,
+		_periodo: number,
 	): Promise<RestricaoAtiva[]> {
 		const resultado = await this.restricaoRepo
 			.createQueryBuilder("ru")
@@ -32,6 +30,8 @@ export class TypeOrmRestricaoRepository implements IRestricaoRepository {
 				"ru.cdTpRestricao",
 				"tr.dsRestricao",
 				"tr.dsVarRef",
+				"tr.cdTipoAtributo",
+				"ru.nrPerRestricao",
 				"ru.vlRestricao",
 				"ru.vlFxIniRest",
 				"ru.vlFxFimRest",
@@ -52,6 +52,8 @@ export class TypeOrmRestricaoRepository implements IRestricaoRepository {
 			cdTpRestricao: Number(r.ru_cdTpRestricao),
 			dsRestricao: String(r.tr_dsRestricao),
 			dsVarRef: String(r.tr_dsVarRef),
+			cdTipoAtributo: Number(r.tr_cdTipoAtributo),
+			nrPerRestricao: Number(r.ru_nrPerRestricao),
 			vlRestricao: r.ru_vlRestricao ? Number(r.ru_vlRestricao) : undefined,
 			vlFxIniRest: r.ru_vlFxIniRest ? Number(r.ru_vlFxIniRest) : undefined,
 			vlFxFimRest: r.ru_vlFxFimRest ? Number(r.ru_vlFxFimRest) : undefined,
