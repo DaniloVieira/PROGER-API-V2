@@ -1,0 +1,9 @@
+export { TypeOrmProgramacaoWriteRepository } from "./typeorm-programacao-write.repository";
+export { TypeOrmProgramacaoReadRepository } from "./typeorm-programacao-read.repository";
+export { TypeOrmUsinaReadRepository } from "./typeorm-usina-read.repository";
+export { TypeOrmOutboxRepository } from "./typeorm-outbox.repository";
+export { TypeOrmProdutibilidadeRepository } from "./typeorm-produtibilidade.repository";
+export { TypeOrmRestricaoRepository } from "./typeorm-restricao.repository";
+export { TypeOrmCurvaCotaVolRepository } from "./typeorm-curva-cota-vol.repository";
+export { TypeOrmRelacUsinasRepository } from "./typeorm-relac-usinas.repository";
+export { TypeOrmParametrosRepository } from "./typeorm-parametros.repository";

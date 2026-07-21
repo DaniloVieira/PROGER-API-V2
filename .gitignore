@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment — NUNCA commitar credenciais
+.env
+.env.local
+.env.development
+.env.development.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Test
+coverage/

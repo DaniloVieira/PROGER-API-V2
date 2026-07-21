@@ -1,0 +1,12 @@
+export { PrgUsinaEntity } from "./prg-usina.entity";
+export { PrgProgramacaoEntity } from "./prg-programacao.entity";
+export { PrgDadosProgramacaoEntity } from "./prg-dados-programacao.entity";
+export { PrgOutboxEntity } from "./prg-outbox.entity";
+export { PrgProdutibilidadeEntity } from "./prg-produtibilidade.entity";
+export { PrgRestricaoUsinaEntity } from "./prg-restricao-usina.entity";
+export { PrgTiposRestricaoEntity } from "./prg-tipos-restricao.entity";
+export { PrgHistoriadorEntity } from "./prg-historiador.entity";
+export { PrgDadosHistoriadorEntity } from "./prg-dados-historiador.entity";
+export { PrgCurvaCotaVolEntity } from "./prg-curva-cota-vol.entity";
+export { PrgRelacUsinasEntity } from "./prg-relac-usinas.entity";
+export { PrgParametrosEntity } from "./prg-parametros.entity";

@@ -1,0 +1,818 @@
+{
+  "files": {
+    "src/app.module.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 56
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:23:41.424Z"
+    },
+    "src/modules/usina/domain/read-models/usina-read.model.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 21
+        }
+      ],
+      "importsChanged": false,
+      "lastEdit": "2026-06-24T18:00:58.933Z"
+    },
+    "src/modules/query/domain/read-models/programacao-read.model.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 44
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T18:00:59.029Z"
+    },
+    "src/modules/query/application/dtos/programacao-resumo.dto.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 37
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T18:00:59.132Z"
+    },
+    "src/modules/query/application/dtos/programacao-dados.dto.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 54
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T18:00:59.229Z"
+    },
+    "src/modules/query/infrastructure/repositories/in-memory-programacao-read.repository.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 102
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:40:15.889Z"
+    },
+    "src/modules/query/application/queries/listar-programacoes.query.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 37
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T17:57:20.409Z"
+    },
+    "src/modules/query/application/queries/buscar-programacao-dados.query.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 39
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T17:57:29.521Z"
+    },
+    "src/modules/query/infrastructure/controllers/programacao-query.controller.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 47
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T17:51:49.978Z"
+    },
+    "src/modules/query/query.module.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 38
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:12:41.073Z"
+    },
+    "src/modules/usina/usina.module.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 36
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-27T16:25:28.858Z"
+    },
+    "src/modules/usina/domain/read-models/usina-read-repository.port.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 14
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T18:01:00.308Z"
+    },
+    "src/modules/usina/application/dtos/usina-resumo.dto.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 59
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T18:01:00.636Z"
+    },
+    "src/modules/usina/infrastructure/repositories/in-memory-usina-read.repository.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 93
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T18:01:00.935Z"
+    },
+    "src/modules/usina/application/queries/buscar-usina-historico.query.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 36
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T17:57:44.142Z"
+    },
+    "src/modules/usina/infrastructure/controllers/usina-query.controller.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 49
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-28T11:28:24.246Z"
+    },
+    "src/modules/query/application/queries/listar-programacoes.handler.spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 86
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T18:01:02.260Z"
+    },
+    "src/modules/query/application/queries/buscar-programacao-dados.handler.spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 65
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T18:01:02.746Z"
+    },
+    "src/modules/usina/application/queries/buscar-usina-historico.handler.spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 87
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T18:01:03.313Z"
+    },
+    "src/modules/query/infrastructure/controllers/programacao-query.controller.spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 89
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T18:01:03.733Z"
+    },
+    "src/modules/command/domain/events/programacao-publicada.event.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 15
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:37:20.217Z"
+    },
+    "src/modules/command/domain/entities/programacao.entity.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 58
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:37:20.223Z"
+    },
+    "src/modules/command/domain/ports/programacao-write-repository.port.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 7
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:37:20.226Z"
+    },
+    "src/modules/command/infrastructure/outbox/outbox-message.entity.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 10
+        }
+      ],
+      "importsChanged": false,
+      "lastEdit": "2026-06-24T23:37:37.749Z"
+    },
+    "src/modules/command/infrastructure/outbox/in-memory-outbox.repository.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 36
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:38:33.429Z"
+    },
+    "src/modules/command/domain/ports/outbox-repository.port.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 9
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:38:26.328Z"
+    },
+    "src/modules/command/application/commands/publicar-programacao.command.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 51
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:38:52.245Z"
+    },
+    "src/modules/command/infrastructure/controllers/programacao-command.controller.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 32
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:43:24.719Z"
+    },
+    "src/modules/command/application/dtos/publicar-programacao.dto.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 20
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:39:21.004Z"
+    },
+    "src/shared/infrastructure/persistence/in-memory-programacao.store.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 85
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:39:54.516Z"
+    },
+    "src/modules/command/infrastructure/repositories/in-memory-programacao-write.repository.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 25
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:40:36.789Z"
+    },
+    "src/modules/command/infrastructure/outbox/outbox-publisher.service.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 40
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:40:54.089Z"
+    },
+    "src/modules/command/command.module.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 61
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:12:30.299Z"
+    },
+    "src/modules/command/domain/entities/programacao.entity.spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 68
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:41:38.806Z"
+    },
+    "src/modules/command/application/commands/publicar-programacao.handler.spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 104
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:41:58.703Z"
+    },
+    "src/modules/command/infrastructure/controllers/programacao-command.controller.spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 45
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-24T23:43:53.295Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/entities/prg-usina.entity.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 29
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-25T13:18:25.969Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/entities/prg-programacao.entity.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 104
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-25T13:18:26.080Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/entities/prg-dados-programacao.entity.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 170
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-25T13:18:26.129Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/entities/prg-outbox.entity.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 26
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T18:03:15.000Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/entities/index.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 7
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:21:08.213Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/repositories/typeorm-programacao-write.repository.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 66
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-27T12:22:15.995Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/repositories/typeorm-programacao-read.repository.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 93
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-27T12:21:31.450Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/repositories/typeorm-usina-read.repository.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 78
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-27T12:52:31.658Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/repositories/typeorm-outbox.repository.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 60
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-25T13:14:07.687Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/repositories/index.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 6
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:22:06.974Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/data-source.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 28
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-25T13:26:27.839Z"
+    },
+    "src/migrations/1719330000000-CreateProgerOutboxTable.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 72
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-25T13:37:25.280Z"
+    },
+    "src/modules/calculation/domain/services/calculo-hidraulico-gate-poc.spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 142
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-25T16:30:26.030Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/entities/prg-produtibilidade.entity.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 50
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:25:53.561Z"
+    },
+    "src/modules/calculation/domain/ports/produtibilidade-repository.port.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 4
+        }
+      ],
+      "importsChanged": false,
+      "lastEdit": "2026-06-26T10:14:45.533Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/repositories/typeorm-produtibilidade.repository.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 27
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:14:51.292Z"
+    },
+    "src/modules/calculation/calculation.module.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 28
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:25:54.283Z"
+    },
+    "src/modules/calculation/application/use-cases/calcular-programacao-hidraulico.use-case.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 88
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:17:13.762Z"
+    },
+    "src/modules/calculation/domain/value-objects/vazao.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 31
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:25:55.080Z"
+    },
+    "src/modules/calculation/application/use-cases/calcular-programacao-hidraulico.use-case.spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 98
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:25:55.424Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/entities/prg-restricao-usina.entity.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 89
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:25:55.859Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/entities/prg-tipos-restricao.entity.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 27
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:25:56.519Z"
+    },
+    "src/modules/restriction/domain/ports/restricao-repository.port.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 18
+        }
+      ],
+      "importsChanged": false,
+      "lastEdit": "2026-06-26T10:21:23.931Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/repositories/typeorm-restricao.repository.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 67
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:21:54.363Z"
+    },
+    "src/modules/restriction/domain/services/validador-restricoes.service.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 190
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:25:58.334Z"
+    },
+    "src/modules/restriction/application/use-cases/validar-restricoes.use-case.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 35
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:23:02.854Z"
+    },
+    "src/modules/restriction/restriction.module.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 27
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:25:59.785Z"
+    },
+    "src/modules/restriction/domain/services/validador-restricoes.service.spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 150
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:24:05.410Z"
+    },
+    "src/modules/restriction/application/use-cases/validar-restricoes.use-case.spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 80
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T10:26:00.812Z"
+    },
+    "src/workers/importacao/jobs/importar-ons.job.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 9
+        }
+      ],
+      "importsChanged": false,
+      "lastEdit": "2026-06-26T11:13:26.160Z"
+    },
+    "src/workers/importacao/jobs/importar-historiador.job.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 9
+        }
+      ],
+      "importsChanged": false,
+      "lastEdit": "2026-06-26T11:13:32.883Z"
+    },
+    "src/workers/importacao/processors/ons.processor.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 25
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T11:13:40.356Z"
+    },
+    "src/workers/importacao/processors/historiador.processor.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 25
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T11:14:03.213Z"
+    },
+    "src/workers/importacao/importacao.worker.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 67
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T11:14:12.922Z"
+    },
+    "src/workers/importacao/processors/ons.processor.spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 24
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T11:14:39.015Z"
+    },
+    "src/workers/importacao/processors/historiador.processor.spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 24
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T11:14:44.215Z"
+    },
+    "jest.config.js": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 23
+        }
+      ],
+      "importsChanged": false,
+      "lastEdit": "2026-06-26T17:56:24.059Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/testing/typeorm-testing.helper.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 41
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T18:03:33.357Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/repositories/typeorm-outbox.repository.integration-spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 74
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-26T17:49:01.737Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/repositories/typeorm-programacao-read.repository.integration-spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 124
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-27T12:21:21.724Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/repositories/typeorm-programacao-write.repository.integration-spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 83
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-27T12:21:17.385Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/repositories/typeorm-usina-read.repository.integration-spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 100
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-27T12:21:24.999Z"
+    },
+    "src/shared/infrastructure/persistence/typeorm/date-utils.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 83
+        }
+      ],
+      "importsChanged": false,
+      "lastEdit": "2026-06-27T12:54:29.367Z"
+    },
+    "src/modules/usina/application/queries/listar-usinas.query.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 21
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-27T16:22:43.526Z"
+    },
+    "test/api.e2e-spec.ts": {
+      "modifiedRanges": [
+        {
+          "start": 1,
+          "end": 289
+        }
+      ],
+      "importsChanged": true,
+      "lastEdit": "2026-06-28T11:28:51.382Z"
+    }
+  },
+  "turnCycles": 0,
+  "maxCycles": 3,
+  "lastUpdated": "2026-06-28T11:28:51.382Z",
+  "sessionId": "lens-mqxp66yu-57d02cee"
+}
