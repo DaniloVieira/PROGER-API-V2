@@ -72,7 +72,11 @@ class CalcularHidraulicoPeriodoResponseDto {
 	@ApiProperty({ example: 557.62 })
 	nivelReservatorio!: number;
 
-	@ApiProperty({ example: 200.0, required: false, description: "Disponibilidade de geração (MW)" })
+	@ApiProperty({
+		example: 200.0,
+		required: false,
+		description: "Disponibilidade de geração (MW)",
+	})
 	@IsOptional()
 	@IsNumber()
 	@Type(() => Number)

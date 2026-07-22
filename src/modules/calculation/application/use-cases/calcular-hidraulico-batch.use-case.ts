@@ -1,9 +1,7 @@
 import { Injectable, Inject } from "@nestjs/common";
-import type {
-	CalcularProgramacaoHidraulicoUseCase,
-	CalcularProgramacaoHidraulicoInput,
-} from "./calcular-programacao-hidraulico.use-case";
-import type { ValidarPainelUseCase } from "@modules/restriction/application/use-cases/validar-painel.use-case";
+import { CalcularProgramacaoHidraulicoUseCase } from "./calcular-programacao-hidraulico.use-case";
+import type { CalcularProgramacaoHidraulicoInput } from "./calcular-programacao-hidraulico.use-case";
+import { ValidarPainelUseCase } from "@modules/restriction/application/use-cases/validar-painel.use-case";
 import type {
 	DadosPainelPeriodo,
 	AlertasRestricoesPainel,
