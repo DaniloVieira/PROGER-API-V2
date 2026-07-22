@@ -40,4 +40,34 @@ describe('ProgramacaoCommandController', () => {
       mensagem: 'Programação publicada com sucesso.',
     });
   });
+
+  it('deve chamar CommandBus com EditarDadosProgramacaoCommand', async () => {
+    const executeSpy = jest.spyOn(commandBus, 'execute').mockResolvedValue(undefined);
+
+    const dto = {
+      dados: [
+        { periodo: 0, geracaoMW: 100 },
+        { periodo: 1, geracaoMW: 110 },
+      ],
+      dtAlteracao: '2025-06-24T12:00:00.000Z',
+    };
+
+    const result = await controller.editarDados('1', dto);
+
+    expect(executeSpy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        cdProgramacao: 1,
+        dados: [
+          { periodo: 0, geracaoMW: 100 },
+          { periodo: 1, geracaoMW: 110 },
+        ],
+        dtAlteracao: '2025-06-24T12:00:00.000Z',
+      }),
+    );
+    expect(result).toEqual({
+      cdProgramacao: 1,
+      situacao: 'EM_EDICAO',
+      mensagem: 'Dados atualizados com sucesso.',
+    });
+  });
 });

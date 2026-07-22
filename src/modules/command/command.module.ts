@@ -4,6 +4,7 @@ import { ConfigModule } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { ProgramacaoCommandController } from "./infrastructure/controllers/programacao-command.controller";
 import { PublicarProgramacaoHandler } from "./application/commands/publicar-programacao.command";
+import { EditarDadosProgramacaoHandler } from "./application/commands/editar-dados-programacao.command";
 import { OutboxPublisher } from "./infrastructure/outbox/outbox-publisher.service";
 import {
 	TypeOrmProgramacaoWriteRepository,
@@ -28,6 +29,7 @@ import {
 	controllers: [ProgramacaoCommandController],
 	providers: [
 		PublicarProgramacaoHandler,
+		EditarDadosProgramacaoHandler,
 		OutboxPublisher,
 		{
 			provide: "IProgramacaoWriteRepository",

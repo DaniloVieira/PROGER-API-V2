@@ -1,10 +1,11 @@
-import { IsNumber, IsString } from 'class-validator';
+import { IsString, IsOptional } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class PublicarProgramacaoRequestDto {
-  @ApiProperty({ description: 'ID do usuário que está publicando a programação', example: 'user-123' })
+  @ApiProperty({ description: 'ID do usuário que está publicando a programação', example: 'user-123', required: false })
   @IsString()
-  usuarioId!: string;
+  @IsOptional()
+  usuarioId?: string;
 }
 
 export class PublicarProgramacaoResponseDto {

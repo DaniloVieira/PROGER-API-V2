@@ -27,6 +27,10 @@ class FakeProgramacaoWriteRepository implements IProgramacaoWriteRepository {
   async salvar(programacao: Programacao): Promise<void> {
     this.store.set(programacao.cdProgramacao, programacao);
   }
+
+  async atualizarDados(): Promise<void> {
+    // no-op for publicar tests
+  }
 }
 
 class FakeOutboxRepository implements IOutboxRepository {

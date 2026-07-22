@@ -3,12 +3,13 @@ import { Inject, Injectable } from '@nestjs/common';
 import type { IProgramacaoWriteRepository } from '../../domain/ports/programacao-write-repository.port';
 import type { IOutboxRepository } from '../../domain/ports/outbox-repository.port';
 import type { OutboxMessage } from '../../domain/entities/outbox-message.entity';
+import { DomainException } from '@shared/domain/domain.exception';
 import { v4 as uuidv4 } from 'uuid';
 
 export class PublicarProgramacaoCommand {
   constructor(
     public readonly cdProgramacao: number,
-    public readonly usuarioId: string,
+    public readonly usuarioId: string = 'system',
   ) {}
 }
 
@@ -26,7 +27,7 @@ export class PublicarProgramacaoHandler implements ICommandHandler<PublicarProgr
     const programacao = await this.programacaoRepo.buscarPorId(command.cdProgramacao);
 
     if (!programacao) {
-      throw new Error(`Programação ${command.cdProgramacao} não encontrada.`);
+      throw new DomainException(`Programação ${command.cdProgramacao} não encontrada.`);
     }
 
     programacao.publicar(command.usuarioId);

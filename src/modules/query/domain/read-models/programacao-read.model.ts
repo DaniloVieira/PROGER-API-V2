@@ -31,11 +31,13 @@ export interface ProgramacaoDados {
 	cdUsina: string;
 	dtProgramacao: string;
 	situacao: string;
+	dtAlteracao?: string;
 	dados: DadosProgramacaoItem[];
 }
 
 export interface DadosProgramacaoItem {
 	periodo: number; // índice do período (0-47 para meia-hora, etc.)
+	nrIntervaloTempo: number; // mesmo valor que periodo, usado pelo frontend
 	geracaoMW: number;
 	vazaoVertida: number;
 	vazaoIncremental: number;
@@ -45,6 +47,20 @@ export interface DadosProgramacaoItem {
 	vazaoDefluente: number;
 	vazaoAfluente: number;
 	dadosVerificados: boolean;
+	// Campos ONS e adicionais do legado
+	geracaoMWOns?: number;
+	vazaoDefluenteOns?: number;
+	vazaoAfluenteOns?: number;
+	vazaoTurbinadaOns?: number;
+	volumeTotalOns?: number;
+	nivelReservatorioOns?: number;
+	vazaoIncrementalPrev?: number;
+	incrementalManual?: boolean;
+	vazaoVaoLivre?: number;
+	vazaoVaoLivreCalc?: number;
+	vaoLivreManual?: boolean;
+	disponivel?: number;
+	geracaoManual?: boolean;
 }
 
 export interface DadosPainelItem {

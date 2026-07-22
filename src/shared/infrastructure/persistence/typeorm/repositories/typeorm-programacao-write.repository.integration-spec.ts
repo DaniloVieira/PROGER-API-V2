@@ -1,5 +1,6 @@
 import type { DataSource, Repository } from "typeorm";
 import { PrgProgramacaoEntity } from "../entities/prg-programacao.entity";
+import { PrgDadosProgramacaoEntity } from "../entities/prg-dados-programacao.entity";
 import { TypeOrmProgramacaoWriteRepository } from "./typeorm-programacao-write.repository";
 import {
 	Programacao,
@@ -17,12 +18,14 @@ function makeUtcDate(dateStr: string): Date {
 describe("TypeOrmProgramacaoWriteRepository (Integration)", () => {
 	let ds: DataSource;
 	let programacaoRepo: Repository<PrgProgramacaoEntity>;
+	let dadosRepo: Repository<PrgDadosProgramacaoEntity>;
 	let repository: TypeOrmProgramacaoWriteRepository;
 
 	beforeEach(async () => {
 		ds = await createTestDataSource();
 		programacaoRepo = ds.getRepository(PrgProgramacaoEntity);
-		repository = new TypeOrmProgramacaoWriteRepository(programacaoRepo);
+		dadosRepo = ds.getRepository(PrgDadosProgramacaoEntity);
+		repository = new TypeOrmProgramacaoWriteRepository(programacaoRepo, dadosRepo);
 	});
 
 	afterEach(async () => {

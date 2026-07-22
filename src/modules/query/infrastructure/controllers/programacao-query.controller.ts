@@ -38,12 +38,12 @@ export class ProgramacaoQueryController {
     return this.listarHandler.execute(query);
   }
 
-  @Get(':id/dados')
+  @Get(':cdProgramacao/dados')
   @ApiOperation({ summary: 'Buscar dados de uma programação' })
   @ApiResponse({ status: 200, type: ProgramacaoDadosDto })
   @ApiResponse({ status: 404, description: 'Programação não encontrada' })
-  async buscarDados(@Param('id') id: string): Promise<ProgramacaoDadosDto | null> {
-    const query = new BuscarProgramacaoDadosQuery(parseInt(id, 10));
+  async buscarDados(@Param('cdProgramacao') cdProgramacao: string): Promise<ProgramacaoDadosDto | null> {
+    const query = new BuscarProgramacaoDadosQuery(parseInt(cdProgramacao, 10));
     return this.buscarDadosHandler.execute(query);
   }
 

@@ -104,8 +104,14 @@ export class TypeOrmProgramacaoReadRepository implements IProgramacaoReadReposit
       cdUsina: programacao.cdUsina,
       dtProgramacao: toDateString(new Date(programacao.dtProgramacao)),
       situacao: programacao.dtPublicacao ? 'PUBLICADA' : 'EM_EDICAO',
-      dados: dadosEntities.map((d) => ({
-        periodo: Number(d.cdDadosProg),
+      dtAlteracao: programacao.dtAlteracao
+        ? (programacao.dtAlteracao instanceof Date
+          ? programacao.dtAlteracao.toISOString()
+          : String(programacao.dtAlteracao))
+        : undefined,
+      dados: dadosEntities.map((d, index) => ({
+        periodo: index,
+        nrIntervaloTempo: index,
         geracaoMW: Number(d.nrGeracao),
         vazaoVertida: Number(d.nrVazaoVertida),
         vazaoIncremental: Number(d.nrVazaoIncr),
@@ -115,6 +121,19 @@ export class TypeOrmProgramacaoReadRepository implements IProgramacaoReadReposit
         vazaoDefluente: Number(d.nrVazaoDefluente),
         vazaoAfluente: Number(d.nrVazaoAfluente),
         dadosVerificados: d.flGerManual === 0,
+        geracaoMWOns: d.nrGeracaoOns != null ? Number(d.nrGeracaoOns) : undefined,
+        vazaoDefluenteOns: d.nrVazaoDeflOns != null ? Number(d.nrVazaoDeflOns) : undefined,
+        vazaoAfluenteOns: d.nrVazaoAflOns != null ? Number(d.nrVazaoAflOns) : undefined,
+        vazaoTurbinadaOns: d.nrVazaoTurbOns != null ? Number(d.nrVazaoTurbOns) : undefined,
+        volumeTotalOns: d.vlVolumeOns != null ? Number(d.vlVolumeOns) : undefined,
+        nivelReservatorioOns: d.vlNivelResOns != null ? Number(d.vlNivelResOns) : undefined,
+        vazaoIncrementalPrev: d.nrVazaoIncrPrev != null ? Number(d.nrVazaoIncrPrev) : undefined,
+        incrementalManual: d.flIncrManual === 1,
+        vazaoVaoLivre: d.nrVazaoVaoLivre != null ? Number(d.nrVazaoVaoLivre) : undefined,
+        vazaoVaoLivreCalc: d.nrVazaoVaoLivreCalc != null ? Number(d.nrVazaoVaoLivreCalc) : undefined,
+        vaoLivreManual: d.flVaoLivreManual === 1,
+        disponivel: d.nrDisponivel != null ? Number(d.nrDisponivel) : undefined,
+        geracaoManual: d.flGerManual === 1,
       })),
     };
   }
